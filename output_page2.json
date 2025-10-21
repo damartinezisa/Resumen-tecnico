@@ -181,7 +181,7 @@
                 "HASTA": 810022
             },
             {
-                "DESCRIPCION": "GQ PRODUCIDOS",
+                "DESCRIPCION": "QQ PRODUCIDOS",
                 "ESTANDAR/DIA": 37352,
                 "HOY": 41850,
                 "HASTA": 2655615
@@ -189,20 +189,20 @@
             {
                 "DESCRIPCION": "AZ. EQUIV. (MIEL)",
                 "ESTANDAR/DIA": null,
-                "HOY": 0,
-                "HASTA": 0
+                "HOY": null,
+                "HASTA": null
             },
             {
                 "DESCRIPCION": "AZ. PMR",
                 "ESTANDAR/DIA": null,
-                "HOY": 41850,
-                "HASTA": 2655615
+                "HOY": 0,
+                "HASTA": 0
             },
             {
                 "DESCRIPCION": "TOTAL QUINTALES",
                 "ESTANDAR/DIA": 37352,
-                "HOY": null,
-                "HASTA": null
+                "HOY": 41850,
+                "HASTA": 2655615
             }
         ]
     },

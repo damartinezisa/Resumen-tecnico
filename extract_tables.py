@@ -328,8 +328,13 @@ def parse_text_based_producto(text):
             continue
     
     # Now transpose the data: each column header becomes a row
-    # Handle the case where ESTANDAR has fewer values (missing AZ. EQUIV. and AZ. PMR columns)
+    # Handle the case where values have fewer entries than headers due to empty cells
+    # ESTANDAR has 5 values (missing AZ. EQUIV. (MIEL) and AZ. PMR)
+    # HOY and HASTA have 6 values (missing AZ. EQUIV. (MIEL))
     for i, header in enumerate(column_headers):
+        # Fix common OCR errors in headers
+        header = header.replace('GQ', 'QQ')
+        
         indicator = {"DESCRIPCION": header}
         
         # For ESTANDAR, map indices accounting for missing columns 4 and 5
@@ -340,9 +345,17 @@ def parse_text_based_producto(text):
         else:  # i >= 6 (TOTAL QUINTALES)
             estandar_idx = i - 2  # Shift back by 2 because of missing columns
         
+        # For HOY and HASTA, map indices accounting for missing column 4 (AZ. EQUIV. (MIEL))
+        if i < 4:
+            hoy_hasta_idx = i
+        elif i == 4:  # AZ. EQUIV. (MIEL)
+            hoy_hasta_idx = None  # This column doesn't exist in HOY/HASTA rows
+        else:  # i >= 5 (AZ. PMR and TOTAL QUINTALES)
+            hoy_hasta_idx = i - 1  # Shift back by 1 because of missing column
+        
         indicator["ESTANDAR/DIA"] = estandar_values[estandar_idx] if estandar_idx is not None and estandar_idx < len(estandar_values) else None
-        indicator["HOY"] = hoy_values[i] if i < len(hoy_values) else None
-        indicator["HASTA"] = hasta_values[i] if i < len(hasta_values) else None
+        indicator["HOY"] = hoy_values[hoy_hasta_idx] if hoy_hasta_idx is not None and hoy_hasta_idx < len(hoy_values) else None
+        indicator["HASTA"] = hasta_values[hoy_hasta_idx] if hoy_hasta_idx is not None and hoy_hasta_idx < len(hasta_values) else None
         indicators.append(indicator)
     
     return indicators
