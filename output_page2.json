@@ -23,7 +23,7 @@
             {
                 "DESCRIPCION": "JUGO DILUIDO TOTAL",
                 "BRIX": 13.23,
-                "SAC": 11.43,
+                "SAC": 11.48,
                 "PZA": 86.77,
                 "COLOR": 15505,
                 "PH": 5.43,
@@ -41,7 +41,7 @@
             {
                 "DESCRIPCION": "JUGO RESIDUAL TOTAL",
                 "BRIX": 1.95,
-                "SAC": 154,
+                "SAC": 1.54,
                 "PZA": 78.97,
                 "COLOR": null,
                 "PH": null,
@@ -84,46 +84,10 @@
                 "GR": null
             },
             {
-                "DESCRIPCION": "CACHAZA TOTAL",
-                "BRIX": 82,
-                "SAC": 1.88,
+                "DESCRIPCION": "CACHAZA TOTAL -Q0",
+                "BRIX": 429,
+                "SAC": null,
                 "PZA": null,
-                "COLOR": null,
-                "PH": null,
-                "GR": null
-            },
-            {
-                "DESCRIPCION": "MELADURA CRUDA",
-                "BRIX": 68.16,
-                "SAC": 59.38,
-                "PZA": 87.11,
-                "COLOR": 15728,
-                "PH": 6.24,
-                "GR": null
-            },
-            {
-                "DESCRIPCION": "MELADURA CLARIFICADA",
-                "BRIX": 67.25,
-                "SAC": 58.7,
-                "PZA": 87.28,
-                "COLOR": 16419,
-                "PH": 6.14,
-                "GR": 4.58
-            },
-            {
-                "DESCRIPCION": "MASA TACH.CONT.\"A\"",
-                "BRIX": 91.51,
-                "SAC": 81.16,
-                "PZA": 88.68,
-                "COLOR": null,
-                "PH": null,
-                "GR": null
-            },
-            {
-                "DESCRIPCION": "MIEL \"A”",
-                "BRIX": 76.07,
-                "SAC": 57.21,
-                "PZA": 75.2,
                 "COLOR": null,
                 "PH": null,
                 "GR": null
@@ -159,7 +123,7 @@
             },
             {
                 "DESCRIPCION": "JUGO RESIDUAL TOTAL",
-                "BRIX": 2.44,
+                "BRIX": 244,
                 "SAC": 1.89,
                 "PZA": 77.3
             },
@@ -188,34 +152,10 @@
                 "PZA": null
             },
             {
-                "DESCRIPCION": "CACHAZA TOTAL",
+                "DESCRIPCION": "CACHAZA TOTAL -Q0",
                 "BRIX": null,
                 "SAC": null,
                 "PZA": null
-            },
-            {
-                "DESCRIPCION": "MELADURA CRUDA",
-                "BRIX": 67.51,
-                "SAC": 58.25,
-                "PZA": 86.3
-            },
-            {
-                "DESCRIPCION": "MELADURA CLARIFICADA",
-                "BRIX": 67.46,
-                "SAC": 58.46,
-                "PZA": 86.66
-            },
-            {
-                "DESCRIPCION": "MASA TACH.CONT.\"A\"",
-                "BRIX": 91.81,
-                "SAC": 80.73,
-                "PZA": 87.93
-            },
-            {
-                "DESCRIPCION": "MIEL \"A”",
-                "BRIX": 77.16,
-                "SAC": 57.51,
-                "PZA": 74.54
             }
         ]
     },
@@ -223,7 +163,7 @@
         "Nombre Agrupador": "PRODUCTO TERMINADO (AZUCAR)",
         "Indicadores": [
             {
-                "DESCRIPCION": "TOTAL GQ CRUDA",
+                "DESCRIPCION": "TOTAL QQ CRUDA",
                 "ESTANDAR/DIA": 20202,
                 "HOY": 26059,
                 "HASTA": 1724090
@@ -241,7 +181,7 @@
                 "HASTA": 810022
             },
             {
-                "DESCRIPCION": "QQ PRODUCIDOS",
+                "DESCRIPCION": "GQ PRODUCIDOS",
                 "ESTANDAR/DIA": 37352,
                 "HOY": 41850,
                 "HASTA": 2655615
@@ -270,12 +210,12 @@
         "Nombre Agrupador": "PRODUCTO TERMINADO (AZUCAR) - CONTINUACIÓN",
         "Indicadores": [
             {
-                "DESCRIPCION": "CRUDA DE 'B\"",
-                "Quintales": 13144,
-                "% HUM.": 0.196,
-                "% CEN.": 0.226,
-                "% POL.": 1334,
-                "COLOR": 15,
+                "DESCRIPCION": "CRUDA DE*B\" 13144]",
+                "Quintales": 196,
+                "% HUM.": 226,
+                "% CEN.": 1334,
+                "% POL.": 15,
+                "COLOR": null,
                 "Mg/kg Vit.\"A\"": null,
                 "T. GRANO": null,
                 "% C.V": null,
@@ -286,23 +226,37 @@
             {
                 "DESCRIPCION": "HASTA",
                 "Quintales": 1542248,
-                "% HUM.": 0.156,
+                "% HUM.": 156,
                 "% CEN.": 0.164,
                 "% POL.": 98.82,
-                "COLOR": 7142,
+                "COLOR": 1142,
                 "Mg/kg Vit.\"A\"": 692,
-                "T. GRANO": 25.89,
-                "% C.V": 12,
+                "T. GRANO": 12,
+                "% C.V": null,
                 "FS": null,
                 "TEMP. ºC.": null,
                 "SED.": null
             },
             {
-                "DESCRIPCION": "lana EXPORTACION",
+                "DESCRIPCION": "[CRUDA EXPORTACION",
                 "Quintales": 50,
-                "% HUM.": 78,
-                "% CEN.": 2,
-                "% POL.": 917,
+                "% HUM.": 126,
+                "% CEN.": 917,
+                "% POL.": 736,
+                "COLOR": 2251,
+                "Mg/kg Vit.\"A\"": 8,
+                "T. GRANO": 42.58,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 173873,
+                "% HUM.": 113,
+                "% CEN.": 798,
+                "% POL.": 622,
                 "COLOR": 8,
                 "Mg/kg Vit.\"A\"": null,
                 "T. GRANO": null,
@@ -312,23 +266,9 @@
                 "SED.": null
             },
             {
-                "DESCRIPCION": "HASTA",
-                "Quintales": 173873,
-                "% HUM.": 57,
-                "% CEN.": 113,
-                "% POL.": 99.34,
-                "COLOR": null,
-                "Mg/kg Vit.\"A\"": null,
-                "T. GRANO": null,
-                "% C.V": null,
-                "FS": null,
-                "TEMP. ºC.": null,
-                "SED.": null
-            },
-            {
-                "DESCRIPCION": "lo",
+                "DESCRIPCION": "[ESTANDAR",
                 "Quintales": 50,
-                "% HUM.": 55,
+                "% HUM.": 595,
                 "% CEN.": null,
                 "% POL.": null,
                 "COLOR": null,
@@ -340,11 +280,11 @@
                 "SED.": null
             },
             {
-                "DESCRIPCION": "HASTA tiza] ost] cas] 9e7aj 34s[ 988] er 28600) «386",
-                "Quintales": null,
-                "% HUM.": null,
-                "% CEN.": null,
-                "% POL.": null,
+                "DESCRIPCION": "HASTA 112:410 081]",
+                "Quintales": 28,
+                "% HUM.": 345,
+                "% CEN.": 9.38,
+                "% POL.": 671,
                 "COLOR": null,
                 "Mg/kg Vit.\"A\"": null,
                 "T. GRANO": null,
@@ -368,12 +308,12 @@
                 "SED.": null
             },
             {
-                "DESCRIPCION": "HASTA 0/00 0/10/28 a —a—",
-                "Quintales": null,
-                "% HUM.": null,
-                "% CEN.": null,
-                "% POL.": null,
-                "COLOR": null,
+                "DESCRIPCION": "HASTA",
+                "Quintales": 5031,
+                "% HUM.": 0.008,
+                "% CEN.": 1135,
+                "% POL.": 625,
+                "COLOR": 30.08,
                 "Mg/kg Vit.\"A\"": null,
                 "T. GRANO": null,
                 "% C.V": null,
@@ -396,67 +336,11 @@
                 "SED.": null
             },
             {
-                "DESCRIPCION": "HASTA 4062] 036]",
-                "Quintales": 82,
-                "% HUM.": 1886,
-                "% CEN.": 677,
-                "% POL.": 2528,
-                "COLOR": 3858,
-                "Mg/kg Vit.\"A\"": null,
-                "T. GRANO": null,
-                "% C.V": null,
-                "FS": null,
-                "TEMP. ºC.": null,
-                "SED.": null
-            },
-            {
-                "DESCRIPCION": "REF.",
-                "Quintales": 3,
-                "% HUM.": null,
-                "% CEN.": null,
-                "% POL.": null,
-                "COLOR": null,
-                "Mg/kg Vit.\"A\"": null,
-                "T. GRANO": null,
-                "% C.V": null,
-                "FS": null,
-                "TEMP. ºC.": null,
-                "SED.": null
-            },
-            {
-                "DESCRIPCION": "HASTA 26]",
-                "Quintales": 32,
-                "% HUM.": null,
-                "% CEN.": null,
-                "% POL.": null,
-                "COLOR": null,
-                "Mg/kg Vit.\"A\"": null,
-                "T. GRANO": null,
-                "% C.V": null,
-                "FS": null,
-                "TEMP. ºC.": null,
-                "SED.": null
-            },
-            {
-                "DESCRIPCION": "ha PAIS",
-                "Quintales": 50,
-                "% HUM.": 30,
-                "% CEN.": 4,
-                "% POL.": null,
-                "COLOR": null,
-                "Mg/kg Vit.\"A\"": null,
-                "T. GRANO": null,
-                "% C.V": null,
-                "FS": null,
-                "TEMP. ºC.": null,
-                "SED.": null
-            },
-            {
-                "DESCRIPCION": "HASTA rose] os] ooso sesep",
-                "Quintales": 46,
-                "% HUM.": 900667,
-                "% CEN.": null,
-                "% POL.": null,
+                "DESCRIPCION": "Í HASTA 4,062]",
+                "Quintales": 36,
+                "% HUM.": 266,
+                "% CEN.": 77,
+                "% POL.": 38.53,
                 "COLOR": null,
                 "Mg/kg Vit.\"A\"": null,
                 "T. GRANO": null,

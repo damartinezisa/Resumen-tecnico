@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script to extract tables from technical report images.
+Script to extract tables from technical report images or PDFs.
 Extracts 3 tables with yellow headers and outputs structured JSON data.
 """
 
@@ -11,7 +11,46 @@ from PIL import Image
 import json
 import re
 import sys
+import os
+import tempfile
 from typing import List, Dict, Any
+try:
+    import fitz  # PyMuPDF
+except ImportError:
+    fitz = None
+
+def extract_page_from_pdf(pdf_path, page_number=2):
+    """Extract a specific page from PDF as an image"""
+    if fitz is None:
+        raise ImportError("PyMuPDF is required to process PDF files. Install it with: pip install PyMuPDF")
+    
+    # Open PDF
+    pdf_document = fitz.open(pdf_path)
+    
+    # Check if page exists
+    if page_number > len(pdf_document):
+        raise ValueError(f"PDF only has {len(pdf_document)} pages, cannot extract page {page_number}")
+    
+    # Get the specified page (page_number is 1-indexed, fitz uses 0-indexed)
+    page = pdf_document[page_number - 1]
+    
+    # Render page to image at high resolution (300 DPI)
+    mat = fitz.Matrix(300/72, 300/72)  # 72 is default DPI, scale to 300
+    pix = page.get_pixmap(matrix=mat)
+    
+    # Convert to numpy array
+    img_data = pix.samples
+    img = np.frombuffer(img_data, dtype=np.uint8).reshape(pix.height, pix.width, pix.n)
+    
+    # Convert RGB to BGR for OpenCV
+    if pix.n == 3:  # RGB
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    elif pix.n == 4:  # RGBA
+        img = cv2.cvtColor(img, cv2.COLOR_RGBA2BGR)
+    
+    pdf_document.close()
+    
+    return img
 
 def detect_yellow_regions(image):
     """Detect yellow regions in the image (table headers)"""
@@ -386,13 +425,21 @@ def parse_text_based_continuacion(text):
     
     return indicators
 
-def main(image_path):
-    """Main function to extract tables from image"""
-    # Read image
-    image = cv2.imread(image_path)
-    if image is None:
-        print(f"Error: Could not read image {image_path}", file=sys.stderr)
-        return None
+def main(file_path, page_number=2):
+    """Main function to extract tables from image or PDF"""
+    # Check if input is a PDF or image
+    file_ext = os.path.splitext(file_path)[1].lower()
+    
+    if file_ext == '.pdf':
+        # Extract page from PDF
+        print(f"Extracting page {page_number} from PDF...", file=sys.stderr)
+        image = extract_page_from_pdf(file_path, page_number)
+    else:
+        # Read image directly
+        image = cv2.imread(file_path)
+        if image is None:
+            print(f"Error: Could not read image {file_path}", file=sys.stderr)
+            return None
     
     # Detect yellow regions
     yellow_mask = detect_yellow_regions(image)
@@ -461,11 +508,15 @@ def main(image_path):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python extract_tables.py <image_path>")
+        print("Usage: python extract_tables.py <file_path> [page_number]")
+        print("  file_path: Path to PDF or image file")
+        print("  page_number: Page number to extract (default: 2, only for PDFs)")
         sys.exit(1)
     
-    image_path = sys.argv[1]
-    results = main(image_path)
+    file_path = sys.argv[1]
+    page_number = int(sys.argv[2]) if len(sys.argv) > 2 else 2
+    
+    results = main(file_path, page_number)
     
     if results:
         # Output JSON without extra text
