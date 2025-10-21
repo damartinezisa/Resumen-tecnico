@@ -192,10 +192,16 @@ def parse_text_based_analisis(text):
     return hoy_indicators, hasta_indicators
 
 def parse_text_based_producto(text):
-    """Parse PRODUCTO TERMINADO table from raw text"""
+    """Parse PRODUCTO TERMINADO table from raw text - handles transposed table format"""
     indicators = []
     
     lines = text.strip().split('\n')
+    
+    # Find column headers line
+    column_headers = []
+    estandar_values = []
+    hoy_values = []
+    hasta_values = []
     
     for line in lines:
         line = line.strip()
@@ -208,53 +214,96 @@ def parse_text_based_producto(text):
         if 'DESCRIPCION' in line.upper() and 'Quintales' in line:
             break
         
-        # Skip header/title lines
-        if any(skip in line.upper() for skip in ['PRODUCTO', 'TERMINADO', 'AZUCAR']):
-            if 'QQ' not in line.upper() and 'AZ.' not in line.upper() and 'TOTAL' not in line.upper():
-                continue
-        
-        # Skip column header line
-        if line.upper().startswith('ESTANDAR') and 'DIA' in line.upper() and 'HOY' in line.upper():
+        # Skip title line
+        if 'PRODUCTO' in line.upper() and 'TERMINADO' in line.upper():
             continue
         
-        # Split into tokens
-        tokens = line.split()
-        if len(tokens) < 2:
+        # Check if this is the column headers line
+        if 'TOTAL' in line.upper() and 'QQ' in line.upper() and 'CRUDA' in line.upper():
+            # Parse column headers - they are pipe-separated or space-separated phrases
+            # Expected headers: TOTAL QQ CRUDA, TOTAL QQ ESTAN., TOTAL QQ REFIN., QQ PRODUCIDOS, AZ. EQUIV. (MIEL), AZ. PMR, TOTAL QUINTALES
+            
+            # Replace multiple delimiters with a single pipe
+            line = re.sub(r'\s+\|\s+', '|', line)
+            line = re.sub(r'\[\|?', '|', line)
+            
+            # Split by pipe first
+            parts = [p.strip() for p in line.split('|') if p.strip()]
+            
+            for part in parts:
+                # Further split by specific keywords
+                # Look for patterns like "TOTAL QQ CRUDA TOTAL QQ ESTAN."
+                tokens = part.split()
+                
+                i = 0
+                current_header = []
+                while i < len(tokens):
+                    token = tokens[i]
+                    current_header.append(token)
+                    
+                    # Check if next token starts a new header
+                    if i + 1 < len(tokens):
+                        next_token = tokens[i + 1]
+                        # Start new header if we see TOTAL, QQ (standalone), or AZ.
+                        if (next_token == 'TOTAL' and current_header and 
+                            (len(current_header) >= 2 or current_header[-1] != 'TOTAL')):
+                            header = ' '.join(current_header)
+                            column_headers.append(header)
+                            current_header = []
+                        elif next_token in ['QQ', 'AZ.'] and current_header and current_header[-1] not in ['TOTAL', 'QQ']:
+                            header = ' '.join(current_header)
+                            column_headers.append(header)
+                            current_header = []
+                    
+                    i += 1
+                
+                # Save any remaining header
+                if current_header:
+                    header = ' '.join(current_header)
+                    column_headers.append(header)
+            
             continue
         
-        # Find where numeric values start
-        desc_parts = []
-        values = []
-        found_number = False
-        
-        for token in tokens:
-            # Check if token is numeric
-            if re.match(r'^[\d,\.]+$', token):
-                found_number = True
-                values.append(token.replace(',', ''))
-            else:
-                if not found_number:
-                    desc_parts.append(token)
-        
-        if not desc_parts:
+        # Check if this is ESTANDAR/DIA row
+        if line.upper().startswith('ESTANDAR'):
+            tokens = line.split()
+            for token in tokens[1:]:  # Skip "ESTANDAR/DIA"
+                if re.match(r'^[\d,\.]+$', token):
+                    estandar_values.append(parse_number(token.replace(',', '')))
             continue
         
-        description = ' '.join(desc_parts)
-        
-        # Skip if description looks like a column header
-        if description.upper() in ['ESTANDAR/DIA', 'ESTANDARDIA', 'HOY', 'HASTA']:
+        # Check if this is HOY row
+        if line.upper().startswith('HOY'):
+            tokens = line.split()
+            for token in tokens[1:]:  # Skip "HOY"
+                if re.match(r'^[\d,\.]+$', token):
+                    hoy_values.append(parse_number(token.replace(',', '')))
             continue
         
-        indicator = {"DESCRIPCION": description}
+        # Check if this is HASTA row
+        if line.upper().startswith('HASTA'):
+            tokens = line.split()
+            for token in tokens[1:]:  # Skip "HASTA"
+                if re.match(r'^[\d,\.]+$', token):
+                    hasta_values.append(parse_number(token.replace(',', '')))
+            continue
+    
+    # Now transpose the data: each column header becomes a row
+    # Handle the case where ESTANDAR has fewer values (missing AZ. EQUIV. and AZ. PMR columns)
+    for i, header in enumerate(column_headers):
+        indicator = {"DESCRIPCION": header}
         
-        # Columns: ESTANDAR/DIA, HOY, HASTA (3 values)
-        columns = ["ESTANDAR/DIA", "HOY", "HASTA"]
-        for i, col in enumerate(columns):
-            if i < len(values):
-                indicator[col] = parse_number(values[i])
-            else:
-                indicator[col] = None
+        # For ESTANDAR, map indices accounting for missing columns 4 and 5
+        if i < 4:
+            estandar_idx = i
+        elif i == 4 or i == 5:  # AZ. EQUIV. (MIEL) and AZ. PMR
+            estandar_idx = None  # These columns don't exist in ESTANDAR row
+        else:  # i >= 6 (TOTAL QUINTALES)
+            estandar_idx = i - 2  # Shift back by 2 because of missing columns
         
+        indicator["ESTANDAR/DIA"] = estandar_values[estandar_idx] if estandar_idx is not None and estandar_idx < len(estandar_values) else None
+        indicator["HOY"] = hoy_values[i] if i < len(hoy_values) else None
+        indicator["HASTA"] = hasta_values[i] if i < len(hasta_values) else None
         indicators.append(indicator)
     
     return indicators
@@ -374,7 +423,12 @@ def main(image_path):
         thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
                                          cv2.THRESH_BINARY, 11, 2)
         
-        config = '--psm 6'
+        # Use different OCR modes based on table type
+        if idx == 1:  # PRODUCTO TERMINADO needs PSM 4 for better column detection
+            config = '--psm 4'
+        else:
+            config = '--psm 6'
+        
         text = pytesseract.image_to_string(thresh, lang='spa', config=config)
         
         # Parse based on table type using text-based parsing
