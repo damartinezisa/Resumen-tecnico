@@ -16,12 +16,12 @@ This guide describes the two-step process to extract tables from PDF without usi
 ### Step 1: Extract PDF to Excel
 
 ```bash
-python extract_pdf_to_excel.py <pdf_file> [page_number]
+python pdf-to-excel.py <pdf_file> [page_number]
 ```
 
 **Example:**
 ```bash
-python extract_pdf_to_excel.py 1003.pdf 2
+python pdf-to-excel.py 1003.pdf 2
 ```
 
 **Output:**
@@ -44,12 +44,12 @@ python extract_pdf_to_excel.py 1003.pdf 2
 ### Step 3: Convert Excel to JSON
 
 ```bash
-python extract_pdf_to_excel.py --excel-to-json <excel_file> [output_json]
+python excel-to-json.py <excel_file> [output_json]
 ```
 
 **Example:**
 ```bash
-python extract_pdf_to_excel.py --excel-to-json 1003_page2_tables.xlsx output.json
+python excel-to-json.py 1003_page2_tables.xlsx output.json
 ```
 
 **Output:**
@@ -63,14 +63,14 @@ python extract_pdf_to_excel.py --excel-to-json 1003_page2_tables.xlsx output.jso
 
 ```bash
 # Step 1: Extract to Excel
-python extract_pdf_to_excel.py 1003.pdf 2
+python pdf-to-excel.py 1003.pdf 2
 # Output: 1003_page2_tables.xlsx
 
 # Step 2: Open and validate in Excel
 # (Manual step - review and save)
 
 # Step 3: Convert to JSON
-python extract_pdf_to_excel.py --excel-to-json 1003_page2_tables.xlsx final.json
+python excel-to-json.py 1003_page2_tables.xlsx final.json
 # Output: final.json
 ```
 
