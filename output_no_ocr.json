@@ -1,0 +1,972 @@
+[
+    {
+        "Nombre Agrupador": "ANALISIS - HOY",
+        "Indicadores": [
+            {
+                "DESCRIPCION": "JUGO DESMENUZADO TOTAL",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO ABSOLUTO",
+                "BRIX": 16.5,
+                "SAC": 14.27,
+                "PZA": 86.48,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO DILUIDO TOTAL",
+                "BRIX": 13.23,
+                "SAC": 11.48,
+                "PZA": 86.77,
+                "COLOR": 15505,
+                "PH": 5.43,
+                "GR": 4.47
+            },
+            {
+                "DESCRIPCION": "JUGO DEL DIFUSOR",
+                "BRIX": 9.15,
+                "SAC": 7.63,
+                "PZA": 83.38,
+                "COLOR": null,
+                "PH": 6.29,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO RESIDUAL TOTAL",
+                "BRIX": 1.95,
+                "SAC": 1.54,
+                "PZA": 78.97,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO ALCALIZADO",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": 17547,
+                "PH": 7.75,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO CLARIFICADO MEZCLA",
+                "BRIX": 13.88,
+                "SAC": 12.08,
+                "PZA": 87.03,
+                "COLOR": 15586,
+                "PH": 7.43,
+                "GR": 4.03
+            },
+            {
+                "DESCRIPCION": "JUGO FILTRADO",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO FILTRADO MEZCLA FILTRO BANDA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "CACHAZA TOTAL",
+                "BRIX": null,
+                "SAC": 0.82,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MELADURA CRUDA",
+                "BRIX": 68.16,
+                "SAC": 59.38,
+                "PZA": 87.11,
+                "COLOR": 15728,
+                "PH": 6.24,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MELADURA CLARIFICADA",
+                "BRIX": 67.25,
+                "SAC": 58.7,
+                "PZA": 87.28,
+                "COLOR": 16419,
+                "PH": 6.14,
+                "GR": 4.58
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"A\"",
+                "BRIX": 91.51,
+                "SAC": 81.16,
+                "PZA": 88.68,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MIEL \"A\"",
+                "BRIX": 76.07,
+                "SAC": 57.21,
+                "PZA": 75.2,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"A\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 13.48,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"B\"",
+                "BRIX": 94.22,
+                "SAC": 74.38,
+                "PZA": 78.94,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MIEL \"B\"",
+                "BRIX": 84.48,
+                "SAC": 46.73,
+                "PZA": 55.31,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"B\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 23.63,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MAGMA B",
+                "BRIX": 98.98,
+                "SAC": 94.96,
+                "PZA": 95.93,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"C\"",
+                "BRIX": 97.81,
+                "SAC": 55.64,
+                "PZA": 56.88,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MIEL FINAL",
+                "BRIX": 85.78,
+                "SAC": 29.14,
+                "PZA": 33.97,
+                "COLOR": null,
+                "PH": null,
+                "GR": 13.79
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"C\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 22.91,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MAGMA \"C\" (MINGLER)",
+                "BRIX": 94.43,
+                "SAC": 81.06,
+                "PZA": 85.84,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"A\"",
+                "BRIX": 89.96,
+                "SAC": 83.4,
+                "PZA": 92.7,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"B\"",
+                "BRIX": 91.32,
+                "SAC": 79.21,
+                "PZA": 86.73,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"C\"",
+                "BRIX": 93.57,
+                "SAC": 60.85,
+                "PZA": 65.03,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "LICOR FUNDIDO",
+                "BRIX": 66.73,
+                "SAC": 66.0,
+                "PZA": 98.9,
+                "COLOR": 601,
+                "PH": 6.51,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "LICOR PERCOLADO",
+                "BRIX": 65.88,
+                "SAC": 65.01,
+                "PZA": 98.67,
+                "COLOR": 190,
+                "PH": 6.22,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "SIROPE 1",
+                "BRIX": 75.29,
+                "SAC": 74.06,
+                "PZA": 98.36,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "SIROPE 2",
+                "BRIX": 70.82,
+                "SAC": 69.43,
+                "PZA": 98.03,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "RUN OFF",
+                "BRIX": 70.5,
+                "SAC": 68.78,
+                "PZA": 97.56,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "* * *P R O D U C T O T E R M I N A D O (A Z U C A R)* * *",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "ESTANDAR/DIA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HOY",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": 0,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": 0,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "DESCRIPCION",
+                "BRIX": null,
+                "SAC": "% HUM.",
+                "PZA": null,
+                "COLOR": "% C.V",
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "CRUDA DE \"B\"",
+                "BRIX": null,
+                "SAC": 0.196,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.156,
+                "PZA": null,
+                "COLOR": 25.89,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "CRUDA EXPORTACION 50 KG",
+                "BRIX": null,
+                "SAC": 0.056,
+                "PZA": null,
+                "COLOR": 22.57,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.057,
+                "PZA": null,
+                "COLOR": 29.04,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "ESTANDAR 50 KG",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.031,
+                "PZA": null,
+                "COLOR": 26.0,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "ESTANDAR 40 KG (20X2)",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.031,
+                "PZA": null,
+                "COLOR": 28.66,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "ESTANDARD 50 KG (5 X10)",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.036,
+                "PZA": null,
+                "COLOR": 25.28,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "REF. 3 GRAMOS (12KG)",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.032,
+                "PZA": null,
+                "COLOR": 23.22,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "REF. PAIS 50 KG",
+                "BRIX": null,
+                "SAC": 0.033,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.031,
+                "PZA": null,
+                "COLOR": 28.27,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "REF. INDUSTRIAL 50 KG",
+                "BRIX": null,
+                "SAC": 0.02,
+                "PZA": null,
+                "COLOR": 29.19,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.023,
+                "PZA": null,
+                "COLOR": 39.99,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "REF. EXPORTACION 50 KG",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.023,
+                "PZA": null,
+                "COLOR": 33.49,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "CRUDO INDUSTRIAL",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.049,
+                "PZA": null,
+                "COLOR": 27.34,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "REF. 40 KG (20X2)",
+                "BRIX": null,
+                "SAC": 0.031,
+                "PZA": null,
+                "COLOR": 35.57,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.03,
+                "PZA": null,
+                "COLOR": 29.82,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "REF. 40 KG (50X800)",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.03,
+                "PZA": null,
+                "COLOR": 29.53,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "REF. 50 KG (5 X 10)",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.034,
+                "PZA": null,
+                "COLOR": 24.5,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "REF. 3 GRAMOS",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": 0.16,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            }
+        ]
+    },
+    {
+        "Nombre Agrupador": "ANALISIS - HASTA",
+        "Indicadores": [
+            {
+                "DESCRIPCION": "JUGO DESMENUZADO TOTAL",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "JUGO ABSOLUTO",
+                "BRIX": 16.04,
+                "SAC": 13.81,
+                "PZA": 86.09
+            },
+            {
+                "DESCRIPCION": "JUGO DILUIDO TOTAL",
+                "BRIX": 13.18,
+                "SAC": 11.36,
+                "PZA": 86.23
+            },
+            {
+                "DESCRIPCION": "JUGO DEL DIFUSOR",
+                "BRIX": 8.88,
+                "SAC": 7.37,
+                "PZA": 82.93
+            },
+            {
+                "DESCRIPCION": "JUGO RESIDUAL TOTAL",
+                "BRIX": 2.44,
+                "SAC": 1.89,
+                "PZA": 77.3
+            },
+            {
+                "DESCRIPCION": "JUGO ALCALIZADO",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "JUGO CLARIFICADO MEZCLA",
+                "BRIX": 13.98,
+                "SAC": 12.14,
+                "PZA": 86.81
+            },
+            {
+                "DESCRIPCION": "JUGO FILTRADO",
+                "BRIX": 13.5,
+                "SAC": 11.44,
+                "PZA": 84.78
+            },
+            {
+                "DESCRIPCION": "JUGO FILTRADO MEZCLA FILTRO BANDA",
+                "BRIX": 7.67,
+                "SAC": 6.59,
+                "PZA": 85.83
+            },
+            {
+                "DESCRIPCION": "CACHAZA TOTAL",
+                "BRIX": null,
+                "SAC": 1.88,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "MELADURA CRUDA",
+                "BRIX": 67.51,
+                "SAC": 58.25,
+                "PZA": 86.3
+            },
+            {
+                "DESCRIPCION": "MELADURA CLARIFICADA",
+                "BRIX": 67.46,
+                "SAC": 58.46,
+                "PZA": 86.66
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"A\"",
+                "BRIX": 91.81,
+                "SAC": 80.73,
+                "PZA": 87.93
+            },
+            {
+                "DESCRIPCION": "MIEL \"A\"",
+                "BRIX": 77.16,
+                "SAC": 57.51,
+                "PZA": 74.54
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"A\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 13.39
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"B\"",
+                "BRIX": 93.92,
+                "SAC": 74.93,
+                "PZA": 79.78
+            },
+            {
+                "DESCRIPCION": "MIEL \"B\"",
+                "BRIX": 81.1,
+                "SAC": 45.18,
+                "PZA": 55.71
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"B\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 24.07
+            },
+            {
+                "DESCRIPCION": "MAGMA B",
+                "BRIX": 99.21,
+                "SAC": 95.87,
+                "PZA": 96.63
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"C\"",
+                "BRIX": 96.87,
+                "SAC": 55.13,
+                "PZA": 56.91
+            },
+            {
+                "DESCRIPCION": "MIEL FINAL",
+                "BRIX": 85.07,
+                "SAC": 29.13,
+                "PZA": 34.24
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"C\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 22.67
+            },
+            {
+                "DESCRIPCION": "MAGMA \"C\" (MINGLER)",
+                "BRIX": 93.76,
+                "SAC": 82.72,
+                "PZA": 88.22
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"A\"",
+                "BRIX": 90.22,
+                "SAC": 82.5,
+                "PZA": 91.44
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"B\"",
+                "BRIX": 91.21,
+                "SAC": 79.36,
+                "PZA": 87.01
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"C\"",
+                "BRIX": 93.58,
+                "SAC": 60.77,
+                "PZA": 64.94
+            },
+            {
+                "DESCRIPCION": "LICOR FUNDIDO",
+                "BRIX": 67.26,
+                "SAC": 66.56,
+                "PZA": 98.96
+            },
+            {
+                "DESCRIPCION": "LICOR PERCOLADO",
+                "BRIX": 65.24,
+                "SAC": 64.11,
+                "PZA": 98.27
+            },
+            {
+                "DESCRIPCION": "SIROPE 1",
+                "BRIX": 70.51,
+                "SAC": 68.51,
+                "PZA": 97.17
+            },
+            {
+                "DESCRIPCION": "SIROPE 2",
+                "BRIX": 71.47,
+                "SAC": 68.44,
+                "PZA": 95.75
+            },
+            {
+                "DESCRIPCION": "RUN OFF",
+                "BRIX": 75.02,
+                "SAC": 69.37,
+                "PZA": 92.47
+            },
+            {
+                "DESCRIPCION": "* * *P R O D U C T O T E R M I N A D O (A Z U C A R)* * *",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "ESTANDAR/DIA",
+                "BRIX": 37352,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HOY",
+                "BRIX": 41850,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": 2655615,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "DESCRIPCION",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "CRUDA DE \"B\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "CRUDA EXPORTACION 50 KG",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "ESTANDAR 50 KG",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "ESTANDAR 40 KG (20X2)",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "ESTANDARD 50 KG (5 X10)",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "REF. 3 GRAMOS (12KG)",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "REF. PAIS 50 KG",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "REF. INDUSTRIAL 50 KG",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "REF. EXPORTACION 50 KG",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "CRUDO INDUSTRIAL",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "REF. 40 KG (20X2)",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "REF. 40 KG (50X800)",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "REF. 50 KG (5 X 10)",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "REF. 3 GRAMOS",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            }
+        ]
+    }
+]

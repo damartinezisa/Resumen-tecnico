@@ -1,0 +1,921 @@
+[
+    {
+        "Nombre Agrupador": "ANALISIS - HOY",
+        "Indicadores": [
+            {
+                "DESCRIPCION": "JUGO DESMENUZADO TOTAL",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO ABSOLUTO",
+                "BRIX": 16.5,
+                "SAC": 14.27,
+                "PZA": 86.48,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO DILUIDO TOTAL",
+                "BRIX": 13.23,
+                "SAC": 11.48,
+                "PZA": 86.77,
+                "COLOR": 15505,
+                "PH": 5.43,
+                "GR": 4.47
+            },
+            {
+                "DESCRIPCION": "JUGO DEL DIFUSOR",
+                "BRIX": 9.15,
+                "SAC": 7.63,
+                "PZA": 83.38,
+                "COLOR": null,
+                "PH": 6.29,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO RESIDUAL TOTAL",
+                "BRIX": 1.95,
+                "SAC": 1.54,
+                "PZA": 78.97,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO ALCALIZADO",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": 17547,
+                "PH": 7.75,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO CLARIFICADO MEZCLA",
+                "BRIX": 13.88,
+                "SAC": 12.08,
+                "PZA": 87.03,
+                "COLOR": 15586,
+                "PH": 7.43,
+                "GR": 4.03
+            },
+            {
+                "DESCRIPCION": "JUGO FILTRADO",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "JUGO FILTRADO MEZCLA FILTRO BANDA",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "CACHAZA TOTAL",
+                "BRIX": null,
+                "SAC": 0.82,
+                "PZA": null,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MELADURA CRUDA",
+                "BRIX": 68.16,
+                "SAC": 59.38,
+                "PZA": 87.11,
+                "COLOR": 15728,
+                "PH": 6.24,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MELADURA CLARIFICADA",
+                "BRIX": 67.25,
+                "SAC": 58.7,
+                "PZA": 87.28,
+                "COLOR": 16419,
+                "PH": 6.14,
+                "GR": 4.58
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"A\"",
+                "BRIX": 91.51,
+                "SAC": 81.16,
+                "PZA": 88.68,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MIEL \"A\"",
+                "BRIX": 76.07,
+                "SAC": 57.21,
+                "PZA": 75.2,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"A\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 13.48,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"B\"",
+                "BRIX": 94.22,
+                "SAC": 74.38,
+                "PZA": 78.94,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MIEL \"B\"",
+                "BRIX": 84.48,
+                "SAC": 46.73,
+                "PZA": 55.31,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"B\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 23.63,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MAGMA B",
+                "BRIX": 98.98,
+                "SAC": 94.96,
+                "PZA": 95.93,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"C\"",
+                "BRIX": 97.81,
+                "SAC": 55.64,
+                "PZA": 56.88,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MIEL FINAL",
+                "BRIX": 85.78,
+                "SAC": 29.14,
+                "PZA": 33.97,
+                "COLOR": null,
+                "PH": null,
+                "GR": 13.79
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"C\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 22.91,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "MAGMA \"C\" (MINGLER)",
+                "BRIX": 94.43,
+                "SAC": 81.06,
+                "PZA": 85.84,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"A\"",
+                "BRIX": 89.96,
+                "SAC": 83.4,
+                "PZA": 92.7,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"B\"",
+                "BRIX": 91.32,
+                "SAC": 79.21,
+                "PZA": 86.73,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"C\"",
+                "BRIX": 93.57,
+                "SAC": 60.85,
+                "PZA": 65.03,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "LICOR FUNDIDO",
+                "BRIX": 66.73,
+                "SAC": 66.0,
+                "PZA": 98.9,
+                "COLOR": 601,
+                "PH": 6.51,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "LICOR PERCOLADO",
+                "BRIX": 65.88,
+                "SAC": 65.01,
+                "PZA": 98.67,
+                "COLOR": 190,
+                "PH": 6.22,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "SIROPE 1",
+                "BRIX": 75.29,
+                "SAC": 74.06,
+                "PZA": 98.36,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "SIROPE 2",
+                "BRIX": 70.82,
+                "SAC": 69.43,
+                "PZA": 98.03,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            },
+            {
+                "DESCRIPCION": "RUN OFF",
+                "BRIX": 70.5,
+                "SAC": 68.78,
+                "PZA": 97.56,
+                "COLOR": null,
+                "PH": null,
+                "GR": null
+            }
+        ]
+    },
+    {
+        "Nombre Agrupador": "ANALISIS - HASTA",
+        "Indicadores": [
+            {
+                "DESCRIPCION": "JUGO DESMENUZADO TOTAL",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "JUGO ABSOLUTO",
+                "BRIX": 16.04,
+                "SAC": 13.81,
+                "PZA": 86.09
+            },
+            {
+                "DESCRIPCION": "JUGO DILUIDO TOTAL",
+                "BRIX": 13.18,
+                "SAC": 11.36,
+                "PZA": 86.23
+            },
+            {
+                "DESCRIPCION": "JUGO DEL DIFUSOR",
+                "BRIX": 8.88,
+                "SAC": 7.37,
+                "PZA": 82.93
+            },
+            {
+                "DESCRIPCION": "JUGO RESIDUAL TOTAL",
+                "BRIX": 2.44,
+                "SAC": 1.89,
+                "PZA": 77.3
+            },
+            {
+                "DESCRIPCION": "JUGO ALCALIZADO",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "JUGO CLARIFICADO MEZCLA",
+                "BRIX": 13.98,
+                "SAC": 12.14,
+                "PZA": 86.81
+            },
+            {
+                "DESCRIPCION": "JUGO FILTRADO",
+                "BRIX": 13.5,
+                "SAC": 11.44,
+                "PZA": 84.78
+            },
+            {
+                "DESCRIPCION": "JUGO FILTRADO MEZCLA FILTRO BANDA",
+                "BRIX": 7.67,
+                "SAC": 6.59,
+                "PZA": 85.83
+            },
+            {
+                "DESCRIPCION": "CACHAZA TOTAL",
+                "BRIX": null,
+                "SAC": 1.88,
+                "PZA": null
+            },
+            {
+                "DESCRIPCION": "MELADURA CRUDA",
+                "BRIX": 67.51,
+                "SAC": 58.25,
+                "PZA": 86.3
+            },
+            {
+                "DESCRIPCION": "MELADURA CLARIFICADA",
+                "BRIX": 67.46,
+                "SAC": 58.46,
+                "PZA": 86.66
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"A\"",
+                "BRIX": 91.81,
+                "SAC": 80.73,
+                "PZA": 87.93
+            },
+            {
+                "DESCRIPCION": "MIEL \"A\"",
+                "BRIX": 77.16,
+                "SAC": 57.51,
+                "PZA": 74.54
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"A\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 13.39
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"B\"",
+                "BRIX": 93.92,
+                "SAC": 74.93,
+                "PZA": 79.78
+            },
+            {
+                "DESCRIPCION": "MIEL \"B\"",
+                "BRIX": 81.1,
+                "SAC": 45.18,
+                "PZA": 55.71
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"B\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 24.07
+            },
+            {
+                "DESCRIPCION": "MAGMA B",
+                "BRIX": 99.21,
+                "SAC": 95.87,
+                "PZA": 96.63
+            },
+            {
+                "DESCRIPCION": "MASA TACH.CONT.\"C\"",
+                "BRIX": 96.87,
+                "SAC": 55.13,
+                "PZA": 56.91
+            },
+            {
+                "DESCRIPCION": "MIEL FINAL",
+                "BRIX": 85.07,
+                "SAC": 29.13,
+                "PZA": 34.24
+            },
+            {
+                "DESCRIPCION": "CAIDA PZA. MASA \"C\"",
+                "BRIX": null,
+                "SAC": null,
+                "PZA": 22.67
+            },
+            {
+                "DESCRIPCION": "MAGMA \"C\" (MINGLER)",
+                "BRIX": 93.76,
+                "SAC": 82.72,
+                "PZA": 88.22
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"A\"",
+                "BRIX": 90.22,
+                "SAC": 82.5,
+                "PZA": 91.44
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"B\"",
+                "BRIX": 91.21,
+                "SAC": 79.36,
+                "PZA": 87.01
+            },
+            {
+                "DESCRIPCION": "SEMILLA \"C\"",
+                "BRIX": 93.58,
+                "SAC": 60.77,
+                "PZA": 64.94
+            },
+            {
+                "DESCRIPCION": "LICOR FUNDIDO",
+                "BRIX": 67.26,
+                "SAC": 66.56,
+                "PZA": 98.96
+            },
+            {
+                "DESCRIPCION": "LICOR PERCOLADO",
+                "BRIX": 65.24,
+                "SAC": 64.11,
+                "PZA": 98.27
+            },
+            {
+                "DESCRIPCION": "SIROPE 1",
+                "BRIX": 70.51,
+                "SAC": 68.51,
+                "PZA": 97.17
+            },
+            {
+                "DESCRIPCION": "SIROPE 2",
+                "BRIX": 71.47,
+                "SAC": 68.44,
+                "PZA": 95.75
+            },
+            {
+                "DESCRIPCION": "RUN OFF",
+                "BRIX": 75.02,
+                "SAC": 69.37,
+                "PZA": 92.47
+            }
+        ]
+    },
+    {
+        "Nombre Agrupador": "PRODUCTO TERMINADO (AZUCAR)",
+        "Indicadores": [
+            {
+                "DESCRIPCION": "TOTAL QQ CRUDA",
+                "ESTANDAR/DIA": 20202,
+                "HOY": 26059,
+                "HASTA": 1724090
+            },
+            {
+                "DESCRIPCION": "TOTAL QQ ESTAN.",
+                "ESTANDAR/DIA": 5600,
+                "HOY": 595,
+                "HASTA": 121503
+            },
+            {
+                "DESCRIPCION": "TOTAL QQ REFIN.",
+                "ESTANDAR/DIA": 11550,
+                "HOY": 15196,
+                "HASTA": 810022
+            },
+            {
+                "DESCRIPCION": "QQ PRODUCIDOS",
+                "ESTANDAR/DIA": null,
+                "HOY": null,
+                "HASTA": null
+            },
+            {
+                "DESCRIPCION": "AZ. EQUIV. (MIEL)",
+                "ESTANDAR/DIA": null,
+                "HOY": null,
+                "HASTA": null
+            },
+            {
+                "DESCRIPCION": "AZ. PMR",
+                "ESTANDAR/DIA": null,
+                "HOY": null,
+                "HASTA": null
+            },
+            {
+                "DESCRIPCION": "TOTAL QUINTALES",
+                "ESTANDAR/DIA": null,
+                "HOY": null,
+                "HASTA": null
+            }
+        ]
+    },
+    {
+        "Nombre Agrupador": "PRODUCTO TERMINADO (AZUCAR) - CONTINUACIÓN",
+        "Indicadores": [
+            {
+                "DESCRIPCION": "CRUDA DE \"B\"",
+                "Quintales": 13144,
+                "% HUM.": 0.196,
+                "% CEN.": 0.226,
+                "% POL.": 98.72,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 1334,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 1542248,
+                "% HUM.": 0.156,
+                "% CEN.": 0.164,
+                "% POL.": 98.82,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 1142,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 692,
+                "SED.": 25.89
+            },
+            {
+                "DESCRIPCION": "CRUDA EXPORTACION 50 KG",
+                "Quintales": 12915,
+                "% HUM.": 0.056,
+                "% CEN.": 0.126,
+                "% POL.": 99.33,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 917,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 736,
+                "SED.": 22.57
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 173873,
+                "% HUM.": 0.057,
+                "% CEN.": 0.113,
+                "% POL.": 99.34,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 798,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 622,
+                "SED.": 29.04
+            },
+            {
+                "DESCRIPCION": "ESTANDAR 50 KG",
+                "Quintales": 595,
+                "% HUM.": null,
+                "% CEN.": null,
+                "% POL.": 99.75,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": null,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 112410,
+                "% HUM.": 0.031,
+                "% CEN.": 0.028,
+                "% POL.": 99.74,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 345,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 671,
+                "SED.": 26.0
+            },
+            {
+                "DESCRIPCION": "ESTANDAR 40 KG (20X2)",
+                "Quintales": null,
+                "% HUM.": null,
+                "% CEN.": null,
+                "% POL.": null,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": null,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 5031,
+                "% HUM.": 0.031,
+                "% CEN.": 0.008,
+                "% POL.": 99.77,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 106,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 625,
+                "SED.": 28.66
+            },
+            {
+                "DESCRIPCION": "ESTANDARD 50 KG (5 X10)",
+                "Quintales": null,
+                "% HUM.": null,
+                "% CEN.": null,
+                "% POL.": null,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": null,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 4062,
+                "% HUM.": 0.036,
+                "% CEN.": 0.052,
+                "% POL.": 99.71,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 466,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 677,
+                "SED.": 25.28
+            },
+            {
+                "DESCRIPCION": "REF. 3 GRAMOS (12KG)",
+                "Quintales": null,
+                "% HUM.": null,
+                "% CEN.": null,
+                "% POL.": null,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": null,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 26,
+                "% HUM.": 0.032,
+                "% CEN.": 0.008,
+                "% POL.": 99.87,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 25,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 727,
+                "SED.": 23.22
+            },
+            {
+                "DESCRIPCION": "REF. PAIS 50 KG",
+                "Quintales": 1587,
+                "% HUM.": 0.033,
+                "% CEN.": 0.008,
+                "% POL.": 99.85,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 51,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 21059,
+                "% HUM.": 0.031,
+                "% CEN.": 0.009,
+                "% POL.": 99.86,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 46,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 667,
+                "SED.": 28.27
+            },
+            {
+                "DESCRIPCION": "REF. INDUSTRIAL 50 KG",
+                "Quintales": 11598,
+                "% HUM.": 0.02,
+                "% CEN.": 0.002,
+                "% POL.": 99.94,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 23,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 665,
+                "SED.": 29.19
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 311780,
+                "% HUM.": 0.023,
+                "% CEN.": 0.003,
+                "% POL.": 99.92,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 21,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 583,
+                "SED.": 39.99
+            },
+            {
+                "DESCRIPCION": "REF. EXPORTACION 50 KG",
+                "Quintales": null,
+                "% HUM.": null,
+                "% CEN.": null,
+                "% POL.": null,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": null,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 403193,
+                "% HUM.": 0.023,
+                "% CEN.": 0.002,
+                "% POL.": 99.93,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 17,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 577,
+                "SED.": 33.49
+            },
+            {
+                "DESCRIPCION": "CRUDO INDUSTRIAL",
+                "Quintales": null,
+                "% HUM.": null,
+                "% CEN.": null,
+                "% POL.": null,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": null,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 7969,
+                "% HUM.": 0.049,
+                "% CEN.": 0.125,
+                "% POL.": 99.37,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 936,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 669,
+                "SED.": 27.34
+            },
+            {
+                "DESCRIPCION": "REF. 40 KG (20X2)",
+                "Quintales": 2011,
+                "% HUM.": 0.031,
+                "% CEN.": 0.006,
+                "% POL.": 99.86,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 46,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 554,
+                "SED.": 35.57
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 38797,
+                "% HUM.": 0.03,
+                "% CEN.": 0.006,
+                "% POL.": 99.86,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 52,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 634,
+                "SED.": 29.82
+            },
+            {
+                "DESCRIPCION": "REF. 40 KG (50X800)",
+                "Quintales": null,
+                "% HUM.": null,
+                "% CEN.": null,
+                "% POL.": null,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": null,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 33103,
+                "% HUM.": 0.03,
+                "% CEN.": 0.006,
+                "% POL.": 99.85,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 48,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 639,
+                "SED.": 29.53
+            },
+            {
+                "DESCRIPCION": "REF. 50 KG (5 X 10)",
+                "Quintales": null,
+                "% HUM.": null,
+                "% CEN.": null,
+                "% POL.": null,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": null,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 2021,
+                "% HUM.": 0.034,
+                "% CEN.": 0.009,
+                "% POL.": 99.86,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 47,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": 732,
+                "SED.": 24.5
+            },
+            {
+                "DESCRIPCION": "REF. 3 GRAMOS",
+                "Quintales": null,
+                "% HUM.": null,
+                "% CEN.": null,
+                "% POL.": null,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": null,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            },
+            {
+                "DESCRIPCION": "HASTA",
+                "Quintales": 42,
+                "% HUM.": 0.16,
+                "% CEN.": 0.005,
+                "% POL.": 99.87,
+                "COLOR": null,
+                "Mg/kg Vit.\"A\"": 38,
+                "T. GRANO": null,
+                "% C.V": null,
+                "FS": null,
+                "TEMP. ºC.": null,
+                "SED.": null
+            }
+        ]
+    }
+]

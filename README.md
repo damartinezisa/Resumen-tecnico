@@ -1,52 +1,102 @@
 # Table Extraction from Technical Reports
 
-This project extracts tabular data from technical report images using Python, OCR (Tesseract), and OpenCV.
+This project extracts tabular data from technical report PDFs **without using OCR**. Instead, it uses direct PDF table extraction for maximum accuracy.
+
+## Approach
+
+The extraction process follows a two-step workflow:
+
+1. **PDF → Excel**: Extract tables directly from PDF and save to Excel for validation
+2. **Excel → JSON**: Convert validated Excel data to structured JSON
+
+This approach ensures:
+- ✅ **No OCR errors** with numbers
+- ✅ **Human validation** of extracted data via Excel
+- ✅ **Maximum accuracy** through visual verification
+- ✅ **Clean structured output** in JSON format
 
 ## Features
 
-- Detects tables in images by identifying yellow header regions
+- **Direct PDF table extraction** using pdfplumber (no OCR)
+- **Excel export** for easy data validation and correction
+- **Formatted Excel output** with highlighted headers and auto-sized columns
 - Extracts 3 main tables:
   1. ANALISIS (split into HOY and HASTA groups)
   2. PRODUCTO TERMINADO (AZUCAR)
   3. PRODUCTO TERMINADO (AZUCAR) - CONTINUACIÓN
 - Outputs structured JSON data
 - Handles empty cells (returns `null`)
-- Uses advanced OCR preprocessing for better accuracy
+- Pre-validation in Excel before final JSON export
 
 ## Requirements
 
 - Python 3.7+
-- Tesseract OCR (with Spanish language pack)
 
 ## Installation
 
-1. Install Tesseract OCR:
-```bash
-# Ubuntu/Debian
-sudo apt-get update
-sudo apt-get install -y tesseract-ocr tesseract-ocr-spa
-
-# macOS
-brew install tesseract tesseract-lang
-```
-
-2. Install Python dependencies:
+Install Python dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
+No additional software needed - OCR tools are NOT required!
+
 ## Usage
 
+### Step 1: Extract PDF to Excel
+
 ```bash
-python extract_tables.py <image_path>
+python extract_pdf_to_excel.py <pdf_file> [page_number]
 ```
 
-Example:
+This will create an Excel file with the extracted tables.
+
+**Example:**
 ```bash
-python extract_tables.py 1003_page_2.png > output.json
+python extract_pdf_to_excel.py 1003.pdf 2
+# Creates: 1003_page2_tables.xlsx
 ```
 
-The script will output JSON to stdout with the following structure:
+### Step 2: Validate in Excel
+
+1. Open the generated Excel file (e.g., `1003_page2_tables.xlsx`)
+2. Review the data in each sheet:
+   - `Raw_Data`: Complete raw extraction
+   - `ANALISIS`: ANALISIS table data
+   - `PRODUCTO_TERMINADO`: PRODUCTO TERMINADO table data
+   - `CONTINUACION`: CONTINUACIÓN table data
+3. Make any necessary corrections
+4. Save the file
+
+### Step 3: Convert Excel to JSON
+
+```bash
+python extract_pdf_to_excel.py --excel-to-json <excel_file> [output_json]
+```
+
+This converts the validated Excel data to JSON format.
+
+**Example:**
+```bash
+python extract_pdf_to_excel.py --excel-to-json 1003_page2_tables.xlsx output.json
+# Creates: output.json
+```
+
+### Complete Workflow Example
+
+```bash
+# Step 1: Extract PDF to Excel
+python extract_pdf_to_excel.py 1003.pdf 2
+
+# Step 2: Validate data in Excel (open and review 1003_page2_tables.xlsx)
+
+# Step 3: Convert to JSON
+python extract_pdf_to_excel.py --excel-to-json 1003_page2_tables.xlsx > final_output.json
+```
+
+## Output Format
+
+The JSON output follows this structure:
 
 ```json
 [
@@ -63,47 +113,69 @@ The script will output JSON to stdout with the following structure:
                 "GR": null
             }
         ]
-    },
-    {
-        "Nombre Agrupador": "ANALISIS - HASTA",
-        "Indicadores": [...]
-    },
-    {
-        "Nombre Agrupador": "PRODUCTO TERMINADO (AZUCAR)",
-        "Indicadores": [...]
-    },
-    {
-        "Nombre Agrupador": "PRODUCTO TERMINADO (AZUCAR) - CONTINUACIÓN",
-        "Indicadores": [...]
     }
 ]
 ```
 
+## Advantages Over OCR
+
+- **No number recognition errors**: PDF text is extracted directly, not read from images
+- **Faster processing**: No image preprocessing or OCR engine needed
+- **Human validation**: Excel provides a familiar interface for data verification
+- **Easy corrections**: Fix any issues directly in Excel before JSON export
+- **Consistent results**: Same input always produces same output (deterministic)
+
 ## How It Works
 
-1. **Yellow Header Detection**: The script uses HSV color space to detect yellow table headers
-2. **Image Preprocessing**: Applies CLAHE contrast enhancement, denoising, and adaptive thresholding
-3. **OCR**: Uses Tesseract with Spanish language model to extract text
-4. **Text Parsing**: Parses OCR output into structured data based on table type
-5. **JSON Output**: Formats the data as JSON with proper null handling
+### Step 1: PDF Table Extraction
+
+1. **Direct Table Detection**: Uses pdfplumber to detect table boundaries directly from PDF structure
+2. **No OCR Required**: Extracts text and numbers directly from PDF (not from images)
+3. **Table Separation**: Identifies and separates the 3 logical tables based on keywords
+4. **Excel Export**: Saves each table to a separate sheet with formatting for easy review
+
+### Step 2: Human Validation
+
+1. **Visual Review**: Open Excel file and review extracted data
+2. **Corrections**: Make any necessary corrections to numbers or text
+3. **Quality Assurance**: Ensures 100% accuracy before JSON conversion
+
+### Step 3: JSON Conversion
+
+1. **Schema Mapping**: Converts Excel data to the required JSON structure
+2. **Type Handling**: Automatically converts numbers to int/float, preserves null values
+3. **Structured Output**: Formats data according to specification with proper groupings
 
 ## Notes
 
-- The script requires clear, high-quality images for best results
-- Yellow headers must be sufficiently large (>50000 pixels area) to be detected as table headers
-- Some OCR errors may occur depending on image quality
+- The script extracts tables directly from PDF structure (not OCR-based)
+- Excel files provide an intermediate validation step for accuracy
+- Make corrections in Excel before converting to JSON
 - Empty cells are represented as `null` in the JSON output
+- The extraction is deterministic - same PDF always produces same Excel output
+- Works best with PDFs that have structured tables (not scanned images)
 
 ## Development
 
 The main components are:
 
-- `detect_yellow_regions()`: Detects yellow table headers
-- `find_table_regions()`: Filters and sorts table regions
-- `extract_table_area()`: Extracts table region from image
-- `parse_text_based_analisis()`: Parses ANALISIS table
-- `parse_text_based_producto()`: Parses PRODUCTO TERMINADO table
-- `parse_text_based_continuacion()`: Parses CONTINUACIÓN table
+- `extract_pdf_to_excel()`: Extracts tables from PDF page and saves to Excel
+- `excel_to_json()`: Converts validated Excel file to JSON format
+- `parse_analisis_from_df()`: Parses ANALISIS table from DataFrame
+- `parse_producto_from_df()`: Parses PRODUCTO TERMINADO table from DataFrame
+- `parse_continuacion_from_df()`: Parses CONTINUACIÓN table from DataFrame
+- `parse_value()`: Converts Excel cell values to appropriate Python types (int/float/None)
+
+## Troubleshooting
+
+**Issue**: No tables found in PDF
+- **Solution**: Ensure the PDF has actual table structures (not just images). The PDF should contain selectable text.
+
+**Issue**: Data in wrong columns in Excel
+- **Solution**: This is expected for complex tables. The Excel intermediate step allows you to manually correct the column alignment before JSON conversion.
+
+**Issue**: Numbers appear as text in Excel
+- **Solution**: The script tries to auto-detect numbers. You can manually correct cell types in Excel before converting to JSON.
 
 ## License
 
