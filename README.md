@@ -46,14 +46,14 @@ No additional software needed - OCR tools are NOT required!
 ### Step 1: Extract PDF to Excel
 
 ```bash
-python extract_pdf_to_excel.py <pdf_file> [page_number]
+python pdf-to-excel.py <pdf_file> [page_number]
 ```
 
 This will create an Excel file with the extracted tables.
 
 **Example:**
 ```bash
-python extract_pdf_to_excel.py 1003.pdf 2
+python pdf-to-excel.py 1003.pdf 2
 # Creates: 1003_page2_tables.xlsx
 ```
 
@@ -71,14 +71,14 @@ python extract_pdf_to_excel.py 1003.pdf 2
 ### Step 3: Convert Excel to JSON
 
 ```bash
-python extract_pdf_to_excel.py --excel-to-json <excel_file> [output_json]
+python excel-to-json.py <excel_file> [output_json]
 ```
 
 This converts the validated Excel data to JSON format.
 
 **Example:**
 ```bash
-python extract_pdf_to_excel.py --excel-to-json 1003_page2_tables.xlsx output.json
+python excel-to-json.py 1003_page2_tables.xlsx output.json
 # Creates: output.json
 ```
 
@@ -86,12 +86,12 @@ python extract_pdf_to_excel.py --excel-to-json 1003_page2_tables.xlsx output.jso
 
 ```bash
 # Step 1: Extract PDF to Excel
-python extract_pdf_to_excel.py 1003.pdf 2
+python pdf-to-excel.py 1003.pdf 2
 
 # Step 2: Validate data in Excel (open and review 1003_page2_tables.xlsx)
 
 # Step 3: Convert to JSON
-python extract_pdf_to_excel.py --excel-to-json 1003_page2_tables.xlsx > final_output.json
+python excel-to-json.py 1003_page2_tables.xlsx > final_output.json
 ```
 
 ## Output Format
@@ -157,9 +157,15 @@ The JSON output follows this structure:
 
 ## Development
 
-The main components are:
+The project is split into two main scripts:
 
+### pdf-to-excel.py
+Extracts tables from PDF and saves to Excel:
 - `extract_pdf_to_excel()`: Extracts tables from PDF page and saves to Excel
+- Handles table detection and separation into logical sections
+
+### excel-to-json.py
+Converts validated Excel files to JSON:
 - `excel_to_json()`: Converts validated Excel file to JSON format
 - `parse_analisis_from_df()`: Parses ANALISIS table from DataFrame
 - `parse_producto_from_df()`: Parses PRODUCTO TERMINADO table from DataFrame
