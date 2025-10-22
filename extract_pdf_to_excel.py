@@ -70,37 +70,38 @@ def extract_pdf_to_excel(pdf_path: str, page_number: int = 2, output_excel: str 
                 
                 # Now parse and separate the three logical tables
                 # Based on the structure, we need to identify:
-                # 1. ANALISIS table
-                # 2. PRODUCTO TERMINADO (AZUCAR) table
-                # 3. PRODUCTO TERMINADO (AZUCAR) - CONTINUACIÓN table
+                # 1. ANALISIS table (rows 0-32)
+                # 2. PRODUCTO TERMINADO (AZUCAR) table (rows 33-37)
+                # 3. PRODUCTO TERMINADO (AZUCAR) - CONTINUACIÓN table (rows 38+)
                 
                 analisis_data = []
                 producto_data = []
                 continuacion_data = []
                 
-                current_section = None
+                # Find section boundaries
+                producto_start = None
+                continuacion_start = None
                 
                 for i, row in enumerate(main_table):
-                    # Identify sections by keywords in first column
                     first_col = str(row[0]) if row[0] else ""
+                    first_col_clean = first_col.replace("*", "").replace(" ", "").upper()
                     
-                    if "ANALISIS" in first_col.upper() and i < 5:
-                        current_section = "ANALISIS"
-                        analisis_data.append(row)
-                    elif "PRODUCTO TERMINADO" in first_col.upper() and "CONTINUACIÓN" not in first_col.upper() and "CONTINUACION" not in first_col.upper():
-                        current_section = "PRODUCTO"
-                        producto_data.append(row)
-                    elif "CONTINUACIÓN" in first_col.upper() or "CONTINUACION" in first_col.upper():
-                        current_section = "CONTINUACION"
-                        continuacion_data.append(row)
-                    else:
-                        # Add row to current section
-                        if current_section == "ANALISIS":
-                            analisis_data.append(row)
-                        elif current_section == "PRODUCTO":
-                            producto_data.append(row)
-                        elif current_section == "CONTINUACION":
-                            continuacion_data.append(row)
+                    if "PRODUCTO" in first_col_clean and "TERMINADO" in first_col_clean:
+                        producto_start = i
+                    elif "DESCRIPCION" in first_col.upper() and i > 30 and "Quintales" in " ".join([str(c) for c in row if c]):
+                        continuacion_start = i
+                        break
+                
+                # Split data into sections
+                if producto_start and continuacion_start:
+                    analisis_data = main_table[:producto_start]
+                    producto_data = main_table[producto_start:continuacion_start]
+                    continuacion_data = main_table[continuacion_start:]
+                elif producto_start:
+                    analisis_data = main_table[:producto_start]
+                    producto_data = main_table[producto_start:]
+                else:
+                    analisis_data = main_table
                 
                 # Save separated tables to individual sheets
                 if analisis_data:
@@ -227,49 +228,35 @@ def parse_analisis_from_df(df):
     hoy_indicators = []
     hasta_indicators = []
     
-    # Find header rows
-    # Expected structure: Row 0 has "ANALISIS", "HOY", "HASTA"
-    # Row 1 has column names: "BRIX", "SAC", "PZA", "COLOR", "PH", "GR"
-    
-    # Find which columns correspond to HOY and HASTA
-    hoy_cols = {}
-    hasta_cols = {}
-    
-    # Scan first few rows to identify column structure
-    for row_idx in range(min(3, len(df))):
+    # The ANALISIS section is from row 0 to before PRODUCTO TERMINADO
+    # Find where PRODUCTO TERMINADO starts
+    producto_start = None
+    for row_idx in range(len(df)):
         row = df.iloc[row_idx]
-        for col_idx, val in enumerate(row):
-            val_str = str(val).strip() if pd.notna(val) else ""
-            
-            # Map columns based on headers
-            if "BRIX" in val_str.upper():
-                # Determine if this is HOY or HASTA column
-                # Look at previous columns for HOY/HASTA indicator
-                context = " ".join([str(df.iloc[r, max(0, col_idx-5):col_idx+1].values) for r in range(row_idx+1)])
-                if "HOY" in context and "BRIX" not in hoy_cols:
-                    hoy_cols["BRIX"] = col_idx
-                elif "HASTA" in context and "BRIX" not in hasta_cols:
-                    hasta_cols["BRIX"] = col_idx
+        first_val = str(row[0]).upper() if pd.notna(row[0]) else ""
+        if "PRODUCTO" in first_val and "TERMINADO" in first_val:
+            producto_start = row_idx
+            break
     
-    # For simplicity, use fixed column mapping based on visual inspection
-    # HOY: columns around index 3-8 for BRIX, SAC, PZA, then 16-21 for COLOR, PH, GR
-    # HASTA: columns around index 9-14 for BRIX, SAC, PZA
+    if producto_start is None:
+        producto_start = len(df)
     
-    # Process data rows (skip header rows)
-    for row_idx in range(2, len(df)):
+    # Process ANALISIS rows (row 2 onwards until PRODUCTO starts)
+    for row_idx in range(2, producto_start):
         row = df.iloc[row_idx]
         
         # First column is DESCRIPCION
         descripcion = str(row[0]).strip() if pd.notna(row[0]) else ""
         
-        if not descripcion or descripcion == "" or "nan" in descripcion.lower():
+        if not descripcion or descripcion == "nan" or len(descripcion) < 2:
             continue
         
-        # Skip separator rows
-        if all(c in '—-_= \t' for c in descripcion):
+        # Skip separator rows and empty rows
+        if all(c in '—-_=*\t ' for c in descripcion):
             continue
         
         # Create HOY indicator
+        # HOY columns: BRIX(3), SAC(4), PZA(7), COLOR(16), PH(18), GR(20)
         hoy_indicator = {
             "DESCRIPCION": descripcion,
             "BRIX": parse_value(row[3]),
@@ -281,6 +268,7 @@ def parse_analisis_from_df(df):
         }
         
         # Create HASTA indicator
+        # HASTA columns: BRIX(9), SAC(11), PZA(14)
         hasta_indicator = {
             "DESCRIPCION": descripcion,
             "BRIX": parse_value(row[9]),
@@ -288,10 +276,8 @@ def parse_analisis_from_df(df):
             "PZA": parse_value(row[14])
         }
         
-        # Only add if we have at least the description
-        if descripcion and len(descripcion) > 1:
-            hoy_indicators.append(hoy_indicator)
-            hasta_indicators.append(hasta_indicator)
+        hoy_indicators.append(hoy_indicator)
+        hasta_indicators.append(hasta_indicator)
     
     return hoy_indicators, hasta_indicators
 
@@ -300,78 +286,58 @@ def parse_producto_from_df(df):
     """Parse PRODUCTO TERMINADO table from DataFrame"""
     indicators = []
     
-    # This table is typically transposed - headers are in columns
-    # Find the row with ESTANDAR/DIA, HOY, HASTA
+    # The PRODUCTO sheet has been separated, so rows are:
+    # Row 0: Section title
+    # Row 1: Column headers (partial)
+    # Row 2: ESTANDAR/DIA values
+    # Row 3: HOY values
+    # Row 4: HASTA values
     
-    # Look for rows containing these keywords
+    if len(df) < 5:
+        return indicators
+    
+    # Find the ESTANDAR, HOY, HASTA rows
     estandar_row_idx = None
     hoy_row_idx = None
     hasta_row_idx = None
     
     for row_idx in range(len(df)):
-        row = df.iloc[row_idx]
-        first_val = str(row[0]).strip().upper() if pd.notna(row[0]) else ""
+        first_val = str(df.iloc[row_idx, 0]).strip().upper() if pd.notna(df.iloc[row_idx, 0]) else ""
         
         if "ESTANDAR" in first_val:
             estandar_row_idx = row_idx
         elif first_val == "HOY":
             hoy_row_idx = row_idx
-        elif first_val == "HASTA":
+        elif first_val == "HASTA" and hoy_row_idx is not None:
             hasta_row_idx = row_idx
-    
-    # Find header row with column names
-    header_row_idx = None
-    for row_idx in range(min(5, len(df))):
-        row = df.iloc[row_idx]
-        row_str = " ".join([str(v) for v in row if pd.notna(v)])
-        if "TOTAL" in row_str.upper() and "QQ" in row_str.upper() and "CRUDA" in row_str.upper():
-            header_row_idx = row_idx
             break
     
-    if header_row_idx is not None and estandar_row_idx is not None:
-        # Parse column headers
-        header_row = df.iloc[header_row_idx]
-        
-        # Expected columns (combined from multiple cells):
-        # TOTAL QQ CRUDA, TOTAL QQ ESTAN., TOTAL QQ REFIN., QQ PRODUCIDOS, 
-        # AZ. EQUIV. (MIEL), AZ. PMR, TOTAL QUINTALES
-        
-        column_descriptions = [
-            "TOTAL QQ CRUDA",
-            "TOTAL QQ ESTAN.",
-            "TOTAL QQ REFIN.",
-            "QQ PRODUCIDOS",
-            "AZ. EQUIV. (MIEL)",
-            "AZ. PMR",
-            "TOTAL QUINTALES"
-        ]
-        
-        # For each column description, get values from ESTANDAR, HOY, HASTA rows
-        # We need to map column indices - typically starts around column 3
-        value_cols = []
-        for col_idx in range(len(df.columns)):
-            # Check if this column has data in the value rows
-            if estandar_row_idx and pd.notna(df.iloc[estandar_row_idx, col_idx]):
-                val = str(df.iloc[estandar_row_idx, col_idx]).strip()
-                if val and val != "nan" and any(c.isdigit() for c in val):
-                    value_cols.append(col_idx)
-        
-        # Create indicators
-        for i, desc in enumerate(column_descriptions):
-            indicator = {"DESCRIPCION": desc}
-            
-            # Get value from appropriate column
-            if i < len(value_cols):
-                col_idx = value_cols[i]
-                indicator["ESTANDAR/DIA"] = parse_value(df.iloc[estandar_row_idx, col_idx])
-                indicator["HOY"] = parse_value(df.iloc[hoy_row_idx, col_idx]) if hoy_row_idx else None
-                indicator["HASTA"] = parse_value(df.iloc[hasta_row_idx, col_idx]) if hasta_row_idx else None
-            else:
-                indicator["ESTANDAR/DIA"] = None
-                indicator["HOY"] = None
-                indicator["HASTA"] = None
-            
-            indicators.append(indicator)
+    if estandar_row_idx is None or hoy_row_idx is None or hasta_row_idx is None:
+        return indicators
+    
+    # Column descriptions - extract from the data columns
+    # The table structure has column headers scattered across row 1
+    # Columns: TOTAL QQ CRUDA (1), TOTAL QQ ESTAN. (2), TOTAL QQ REFIN. (5), QQ PRODUCIDOS (8), etc.
+    
+    # Based on inspection, the columns are at specific indices
+    column_mapping = [
+        ("TOTAL QQ CRUDA", 1),
+        ("TOTAL QQ ESTAN.", 2),
+        ("TOTAL QQ REFIN.", 5),
+        ("QQ PRODUCIDOS", 8),
+        ("AZ. EQUIV. (MIEL)", 11),
+        ("AZ. PMR", 14),
+        ("TOTAL QUINTALES", 17)
+    ]
+    
+    for desc, col_idx in column_mapping:
+        indicator = {
+            "DESCRIPCION": desc,
+            "ESTANDAR/DIA": parse_value(df.iloc[estandar_row_idx, col_idx]) if col_idx < len(df.columns) else None,
+            "HOY": parse_value(df.iloc[hoy_row_idx, col_idx]) if col_idx < len(df.columns) else None,
+            "HASTA": parse_value(df.iloc[hasta_row_idx, col_idx]) if col_idx < len(df.columns) else None
+        }
+        indicators.append(indicator)
     
     return indicators
 
@@ -380,41 +346,51 @@ def parse_continuacion_from_df(df):
     """Parse CONTINUACION table from DataFrame"""
     indicators = []
     
-    # Find header row
-    header_row_idx = None
-    for row_idx in range(min(5, len(df))):
-        row = df.iloc[row_idx]
-        row_str = " ".join([str(v) for v in row if pd.notna(v)])
-        if "DESCRIPCION" in row_str.upper() and "Quintales" in row_str:
-            header_row_idx = row_idx
-            break
+    # The CONTINUACION sheet has been separated
+    # Row 0: Column headers
+    # Rows 1+: Data rows
     
-    if header_row_idx is None:
+    if len(df) < 2:
         return indicators
     
-    # Column names
+    # Column names (fixed positions based on structure)
     column_names = ["DESCRIPCION", "Quintales", "% HUM.", "% CEN.", "% POL.", "COLOR", 
                     "Mg/kg Vit.\"A\"", "T. GRANO", "% C.V", "FS", "TEMP. ºC.", "SED."]
     
-    # Process data rows
-    for row_idx in range(header_row_idx + 1, len(df)):
+    # Process data rows (skip header row 0)
+    for row_idx in range(1, len(df)):
         row = df.iloc[row_idx]
         
         descripcion = str(row[0]).strip() if pd.notna(row[0]) else ""
         
-        if not descripcion or descripcion == "nan":
+        if not descripcion or descripcion == "nan" or len(descripcion) < 2:
             continue
         
         # Skip separator rows
-        if all(c in '—-_= \t' for c in descripcion):
+        if all(c in '—-_=*\t ' for c in descripcion):
             continue
         
         indicator = {"DESCRIPCION": descripcion}
         
-        # Map remaining columns (starting from column 1)
-        for i, col_name in enumerate(column_names[1:]):
-            col_idx = i + 1
-            if col_idx < len(row):
+        # Map columns based on actual positions in the sheet
+        # From inspection: Quintales(2), % HUM(4), % CEN(6), % POL(8), COLOR(9), etc.
+        col_mapping = {
+            "Quintales": 2,
+            "% HUM.": 4,
+            "% CEN.": 6,
+            "% POL.": 8,
+            "COLOR": 9,
+            "Mg/kg Vit.\"A\"": 10,
+            "T. GRANO": 11,
+            "% C.V": 13,
+            "FS": 14,
+            "TEMP. ºC.": 15,
+            "SED.": 16
+        }
+        
+        for col_name in column_names[1:]:
+            col_idx = col_mapping.get(col_name)
+            if col_idx is not None and col_idx < len(row):
                 indicator[col_name] = parse_value(row[col_idx])
             else:
                 indicator[col_name] = None
